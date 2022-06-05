@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Home from "./components/Home"
+import RegisterFrorm from "./components/RegisterFrorm";
+import ClientInfor from "./components/ClientInfor";
 
 function App() {
+  const [clients,setClients] = useState([])
+  const [showRegForm,setshowRegForm] = useState(false)
+  const [showClientInfor,setShowClientInfor] = useState(false)
+  const [selectedClient,setSelectedClient] = useState({})
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Home clients={clients} setClients={setClients} setshowRegForm={setshowRegForm} setShowClientInfor={setShowClientInfor} setSelectedClient={setSelectedClient}/>
+      {showRegForm?<RegisterFrorm setshowRegForm={setshowRegForm} setClients={setClients}/>:""}
+      {showClientInfor?<ClientInfor client={selectedClient} setShowClientInfor= {setShowClientInfor}/>:""}
     </div>
   );
 }

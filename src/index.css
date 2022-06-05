@@ -1,13 +1,384 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root{
+  --font: 'Poppins', sans-serif;
+  --font-color: rgb(8, 19,43)
+
 }
+
+body{
+  font-family: var(--font);
+}
+
+.app{
+  position: relative;
+}
+
+header{
+  margin-left: 3rem;
+  margin-right: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: solid lightgray 2px;
+  color: cornflowerblue;
+}
+
+.new-btn-container{
+  width: 100%;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  padding-right: 4rem;
+  text-align: end;
+
+}
+
+.btn-new-client{
+  right: 100px;
+  margin-top: 1rem;
+  color: white;
+  background-color: cornflowerblue;
+  border: none;
+  width: 150px;
+  height: 40px;
+  border-radius: 50px;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.btn-new-client:hover{
+  background-color: white;
+  border: 2px solid cornflowerblue;
+  color: cornflowerblue;
+  transform: scale(1.05);
+ 
+}
+
+.list-of-clients{
+  margin-top: 2rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 40px;
+
+}
+
+.remove-btn{
+  color: red;
+  cursor: pointer;
+  font-size: 14px;
+  border: red 1px solid;
+  width: 70px;
+  text-align: center;
+  border-radius: 10px;
+  transition: 0.5s ease-in-out;
+  z-index: 1;
+}
+
+.remove-btn:hover{
+  background-color: red;
+  color: white;
+}
+
+.client-preview{
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 0.5fr;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: solid lightgray 2px;
+  padding: 1.2rem ;
+  border-radius: 40px;
+  color: grey;
+  transition: 0.5s ease-in-out;
+
+}
+
+.client-preview:hover{
+  background-color: cornflowerblue;
+  color: white;
+  transform: scale(1.05);
+}
+
+.p-name{
+  color: black;
+  cursor: pointer;
+}
+
+.p-name:hover{
+  color: white;
+  width: fit-content;
+  height: 100%;
+}
+
+
+
+.reg-form-container{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  transition: 0.5s ease-in-out;
+}
+
+.form-container{
+  width: 300px;
+  height: 500px;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 3fr 1fr 1fr 1fr 1fr 1fr;
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+}
+
+.profile-pc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: cornflowerblue;
+}
+
+.profile-pc, .name-input, .surn-input, .cell-input{
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.name-input, .surn-input, .cell-input{
+  height: 30px;
+  border: 2px solid cornflowerblue;
+  border-radius: 10px;
+  padding-left: 10px;
+  outline: none;
+}
+
+.code-selector, .type-selector {
+  height: 30px;
+  border: 2px solid cornflowerblue;
+  border-radius: 10px;
+  padding-left: 10px;
+  width: 120px;
+  outline: none;
+  color: gray;
+}
+
+.reg-btn{
+  margin-top: 1rem;
+  color: white;
+  background-color: cornflowerblue;
+  border: none;
+  width: 120px;
+  height: 30px;
+  border-radius: 50px;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.cancel-reg-btn{
+  margin-top: 1rem;
+  border: none;
+  width: 120px;
+  height: 30px;
+  border-radius: 50px;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  background-color: white;
+  border: 2px solid cornflowerblue;
+  color: cornflowerblue;
+}
+.reg-btn:hover{
+  background-color: white;
+  border: 2px solid cornflowerblue;
+  color: cornflowerblue;
+  transform: scale(1.05);
+ 
+}
+
+
+/* --------------------------------------------------------------------- */
+
+.client-infor-main{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  transition: 0.5s ease-in-out;
+}
+
+.client-infor-container{
+  width: 300px;
+  height: 500px;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 3fr 2fr 1fr;
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.proflie-pic-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.proflie-pic-container >h1{
+  width: 150px;
+  height: 150px;
+  border: 2px solid cornflowerblue;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 90px;
+  padding: auto;
+  color: cornflowerblue;
+}
+.content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: gray;
+}
+
+.content>h2, .content > h3{
+  color: black;
+}
+
+.balance{
+  color: cornflowerblue;
+  font-size: 20px;
+
+}
+
+.balance > span{
+  margin-left: 10px;
+  background-color: white;
+  color: cornflowerblue;
+  border: 2px solid cornflowerblue;
+  border-radius: 12px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+  padding: 0px 20px;
+}
+
+.balance > span:hover{
+  background-color: cornflowerblue;
+  color: white;
+  transform: scale(1.05);
+}
+
+.btns-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+}
+
+.btn-edit{
+  margin-top: 1rem;
+  color: white;
+  background-color: cornflowerblue;
+  border: none;
+  width: 120px;
+  height: 30px;
+  border-radius: 50px;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.btn-edit:hover{
+  background-color: white;
+  border: 2px solid cornflowerblue;
+  color: cornflowerblue;
+  transform: scale(1.05);
+}
+
+.btn-cancel{
+  margin-top: 1rem;
+  width: 120px;
+  height: 30px;
+  border-radius: 50px;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  background-color: white;
+  border: 2px solid cornflowerblue;
+  color: cornflowerblue;
+}
+
+.edit-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 10px;
+  height: 250px;
+}
+
+.pay-container{
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 5px;
+  height: 0;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+}
+
+.pay-container > input{
+  outline: none;
+  border: 2px solid cornflowerblue;
+  margin-top: 10px;
+  color: gray;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+}
+
+.pay-descript{
+  width: 75px;
+  padding-left: 20px;
+}
+
+.pay-amount{
+  width: 50px;
+}
+
+.btn-confirm-pay{
+  margin-left: 20%;
+  width: 150px;
+  background-color: cornflowerblue;
+  color: white;
+  outline: none;
+  border-radius: 12px;
+  border: none;
+  padding: 5px 0px;
+  transition: 0.5s ease-in-out;
+
+}
+
+.btn-confirm-pay:hover{
+  background-color: white;
+  color: cornflowerblue;
+  border: 2px solid cornflowerblue;
+}
+
+
+
+
+
+
+
