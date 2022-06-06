@@ -66,7 +66,6 @@ header{
   flex-direction: column;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius: 40px;
-
 }
 
 .remove-btn{
@@ -375,6 +374,24 @@ header{
   color: cornflowerblue;
   border: 2px solid cornflowerblue;
 }
+
+@media only screen and (max-width: 600px) {
+  header{
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .list-of-clients{
+    margin-top: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .client-preview{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+}
+
 
 
 
