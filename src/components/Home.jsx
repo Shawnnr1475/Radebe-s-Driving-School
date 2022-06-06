@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect} from "react"
 //This is the main component that you land on
 const Home = ({clients,setClients,setshowRegForm, setShowClientInfor,setSelectedClient}) => {
 

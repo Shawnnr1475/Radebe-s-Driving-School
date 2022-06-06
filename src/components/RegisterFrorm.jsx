@@ -31,7 +31,7 @@ const RegisterFrorm = ({setshowRegForm,setClients}) => {
 
     //Creates a new Client
     async function CreateNewClient(data){
-        const res = await fetch("https://radebesds-backend.herokuapp.com/newclient",{
+        await fetch("https://radebesds-backend.herokuapp.com/newclient",{
             method:"POST",
             mode: 'cors',
             headers: {
@@ -40,9 +40,6 @@ const RegisterFrorm = ({setshowRegForm,setClients}) => {
             body: JSON.stringify(data)
         })
 
-        const results = await res.json()
-
-        
         window.location.reload()
         
     }

@@ -22,7 +22,7 @@ const EditClient = ({client, clientInfor ,setShowEdit}) => {
 
         console.log(data)
         //Updates the clients infor
-        const res = await fetch(`https://radebesds-backend.herokuapp.com/client/${client._id}`,{
+        await fetch(`https://radebesds-backend.herokuapp.com/client/${client._id}`,{
             method:"POST",
             mode: 'cors',
             headers: {
