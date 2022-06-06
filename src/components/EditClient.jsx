@@ -9,19 +9,22 @@ const EditClient = ({client, clientInfor ,setShowEdit}) => {
 
     //Executed when the save button is clicked
     async function saveChanges(){
-        const inputs = document.getElementsByTagName("input")
+        const name = document.querySelector(".name-input").value
+        const surname = document.querySelector(".surn-input").value
+        const cell = document.querySelector(".cell-input").value
         const code = document.querySelector(".code-selector").value
         const type = document.querySelector(".type-selector").value
         const data = {
-            name: inputs[0].value,
-            surname: inputs[1].value,
-            cell: inputs[2].value,
+            name: name,
+            surname: surname,
+            cell: cell,
             code: code,
-            type:type,
+            type:type
         }
 
         console.log(data)
-        //Updates the clients infor
+
+        // Updates the clients infor
         await fetch(`https://radebesds-backend.herokuapp.com/client/${client._id}`,{
             method:"POST",
             mode: 'cors',
@@ -30,7 +33,6 @@ const EditClient = ({client, clientInfor ,setShowEdit}) => {
             },
             body: JSON.stringify(data)
         })
-
 
         window.location.reload()
 
